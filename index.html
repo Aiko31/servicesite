@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Pragma" CONTENT="no-cache" />
+    <meta http-equiv="Expires" CONTENT="-1" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="t4rlWAOKliFFgziLhYYxEpNtIh_W-794Po7iuYIL__Q" />
+    <meta name="msvalidate.01" content="" />
+    <meta property="fb:app_id" content="" />
+
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Xoxzoクラウド・テレフォニー">
+    <meta property="og:description" content="ウェブ開発者のための、RESTful ウェブAPIによりSMS配信や音声通話の機能をもつアプリ構築のためのクラウド・テレフォニーです。">
+    
+    <meta property="og:url" content="https://www.xoxzo.com/ja/">
+    
+    <meta property="og:site_name" content="Xoxzo">
+    <meta property="og:image" content="https:https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/xoxzo_opengraph.png">
+    
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@xoxzocom">
+    <meta name="twitter:title" content="Xoxzoクラウド・テレフォニー">
+    <meta name="twitter:description" content="ウェブ開発者のための、RESTful ウェブAPIによりSMS配信や音声通話の機能をもつアプリ構築のためのクラウド・テレフォニーです。">
+    <meta name="twitter:image" content="https:https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/xoxzo_twcard.png">
+
+    
+      
+      
+        
+        <link rel="alternate" hreflang="en" href="https://www.xoxzo.com/en/">
+        
+      
+        
+        <link rel="alternate" hreflang="ja" href="https://www.xoxzo.com/ja/">
+        
+      
+    
+
+    
+  
+  <link rel="canonical" href="https://www.xoxzo.com/ja/">
+  
+
+
+    <!-- Bootstrap MUST be declared first! -->
+    <link href="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="
+  ウェブ開発者のための、RESTful ウェブAPIによりSMS配信や音声通話の機能をもつアプリ構築のためのクラウド・テレフォニーです。
+" />
+
+    <link rel="icon" href="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/xoxzo_16x16_favicon.png">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="https://xoxzomedia-v2.s3.amazonaws.com/h3o/css/xoxzo.css" rel="stylesheet" type="text/css" />
+    <link href="https://xoxzomedia-v2.s3.amazonaws.com/h3o/css/base.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/js/jquery.min.js"></script>
+
+    
+<style type="text/css">
+  header.index {
+    background-image: url('https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/hero-small.jpg');
+  }
+
+  @media (min-width: 768px){
+    header.index {
+      background-image: url('https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/hero-large.jpg');
+    }
+  }
+</style>
+
+
+    <title>
+    
+      開発者のための、発信、通話、メッセージ配信 ウェブAPI | Xoxzoクラウド・テレフォニー
+    
+    </title>
+
+    
+    
+    
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5F5G6WCZD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q5F5G6WCZD');
+</script>
+    
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+  
+</head>
+
+  <body class="d-flex bg-white">
+    
+    
+
+<nav class="navbar sub-navbar navbar-expand-md navbar-dark">
+  <div class="container">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        
+        <a class="nav-link" href="https://hello.xoxzo.com/ja/">
+        
+          Xoxzoのデモ
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="mailto:help@xoxzo.com">
+          お問い合わせ
+        </a>
+      </li>
+      <li class="nav-item">
+        
+        <a class="nav-link" href="https://help.xoxzo.com/ja/">
+        
+          ヘルプセンター
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i> Language&nbsp;<span class="caret"></span></a>
+        <div class="dropdown-menu">
+          
+          
+            
+            <a class="dropdown-item" href="/en/">English</a>
+            
+          
+            
+            <a class="dropdown-item" href="/ja/">日本語</a>
+            
+          
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-md main-nav navbar-dark">
+  <div class="container">
+    <a class="navbar-brand brand-name" href="/ja/">
+      <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/xoxzo_navbar_logo_w_trans.png" alt="Xoxzoのロゴ">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item hover-dropdown">
+          <a class="nav-link hover-dropdown-toggle">サービス</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/ja/about/sms-api/"><img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/sms-sm.png" alt="SMSアイコン"> SMS配信API</a>
+            <a class="dropdown-item" href="/ja/about/voice-api/"><img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/voice-sm.png" alt="Voiceアイコン"> Voice（音声電話）API</a>
+            <a class="dropdown-item" href="/ja/about/utilities-api/"><img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/util-sm.png" alt="ユーティリティアイコン"> テレフォニー・ユーティリティAPI</a>
+            <a class="dropdown-item" href="/ja/about/mail2sms-api/"><img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/mail2sms_sm.png" alt="ユーティリティアイコン"> Mail2SMS ユーザー</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/ja/about/use-cases/">ユースケース</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/ja/about/pricing/">料金</a>
+        </li>
+        <li class="nav-item">
+          
+          <a class="nav-link" href="https://docs.xoxzo.com/ja/">
+          
+            ドキュメント
+          </a>
+        </li>
+        <li class="nav-item">
+          
+          <a class="nav-link" href="https://blog.xoxzo.com/ja/">
+          
+            ブログ
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav md-hide">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i> Language&nbsp;<span class="caret"></span></a>
+          <div class="dropdown-menu">
+            
+            
+              
+              <a class="dropdown-item" href="/en/">English</a>
+              
+            
+              
+              <a class="dropdown-item" href="/ja/">日本語</a>
+              
+            
+          </div>
+        </li>
+        <div class="row">
+          <li id="login" class="nav-item col-6">
+            <a class="btn btn-block btn-white" href="/ja/accounts/login/">ログイン</a>
+          </li>
+          <li id="signup" class="nav-item col-6">
+            <a class="btn btn-block btn-point" href="/ja/accounts/signup/">お問い合わせ</a>
+          </li>
+        </div>
+      </ul>
+      <ul class="navbar-nav ml-auto md-show">
+        <li id="login" class="nav-item">
+          <a class="nav-link" href="/ja/accounts/login/">ログイン</a>
+        </li>
+        <li id="signup" class="nav-item">
+          <a class="nav-link btn btn-point" href="/ja/accounts/signup/">お問い合わせ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+      
+<div class="container">
+</div>
+<header class="index bg-mid">
+    <!--
+    <div class="container">
+    <h1>ウェブ開発者のためのテレフォニーウェブAPI</h1>
+    <h2>
+      SMS配信、携帯電話番号認証、電話の受信・発信がすべてこのAPIで実現できます。
+    </h2>
+    <a href="/ja/accounts/signup/" class="btn btn-lg btn-point">はじめよう</a>
+  </div>
+  -->
+</header>
+
+
+<section class="carousel" aria-label="Gallery">
+  <ol class="carousel__viewport">
+    <li id="carousel__slide1"
+        tabindex="0"
+        class="carousel__slide">
+      <div class="carousel__snapper">
+        <a href="images/slider01.jpg"
+           class="carousel__prev">Go to last slide</a>
+        <a href="#carousel__slide2"
+           class="carousel__next">Go to next slide</a>
+      </div>
+    </li>
+    <li id="carousel__slide2"
+        tabindex="0"
+        class="carousel__slide">
+      <div class="carousel__snapper"></div>
+      <a href="#carousel__slide1"
+         class="carousel__prev">Go to previous slide</a>
+      <a href="#carousel__slide3"
+         class="carousel__next">Go to next slide</a>
+    </li>
+    <li id="carousel__slide3"
+        tabindex="0"
+        class="carousel__slide">
+      <div class="carousel__snapper"></div>
+      <a href="#carousel__slide2"
+         class="carousel__prev">Go to previous slide</a>
+      <a href="#carousel__slide4"
+         class="carousel__next">Go to next slide</a>
+    </li>
+    <li id="carousel__slide4"
+        tabindex="0"
+        class="carousel__slide">
+      <div class="carousel__snapper"></div>
+      <a href="#carousel__slide3"
+         class="carousel__prev">Go to previous slide</a>
+      <a href="#carousel__slide1"
+         class="carousel__next">Go to first slide</a>
+    </li>
+  </ol>
+  <aside class="carousel__navigation">
+    <ol class="carousel__navigation-list">
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide1"
+           class="carousel__navigation-button">Go to slide 1</a>
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide2"
+           class="carousel__navigation-button">Go to slide 2</a>
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide3"
+           class="carousel__navigation-button">Go to slide 3</a>
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide4"
+           class="carousel__navigation-button">Go to slide 4</a>
+      </li>
+    </ol>
+  </aside>
+</section>
+
+
+<section class="bg-white">
+  <div class="container">
+    <h3 class="text-center">
+      XoxzoはWeb開発者の力になります
+    </h3>
+    <h4 class="text-center margin-bt">
+      電話をかけたりSMSを制御したりといった面倒な作業を、インターネットでアクセスできるシンプルで直感的なWeb APIとして提供しています。
+    </h4>
+    <div class="d-flex flex-wrap flex-md-nowrap pane-row">
+      <div class="pane">
+        <div class="d-flex flex-wrap flex-md-column">
+          <div class="img-box img-sm mr-md-auto ml-md-auto">
+            <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/sms.png" alt="SMSアイコン">
+          </div>
+          <div class="flex-1 text-md-center">
+            <h5>SMS配信API</h5>
+            <p>
+              キャリアネットワーク経由でSMS（テキストメッセージ）を送信・受信。
+            </p>
+            <a href="/ja/about/sms-api/" class="link-point">もっと詳しく ></a>
+          </div>
+        </div>
+      </div>
+      <div class="pane">
+        <div class="d-flex flex-wrap flex-md-column">
+          <div class="img-box img-sm mr-md-auto ml-md-auto">
+            <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/voice.png" alt="Voiceアイコン">
+          </div>
+          <div class="flex-1 text-md-center">
+            <h5>Voice（音声電話）API</h5>
+            <p>
+              Web経由で電話をかけたり、着信をWebで受けて、お好みのアクションで制御。
+            </p>
+            <a href="/ja/about/voice-api/" class="link-point">もっと詳しく ></a>
+          </div>
+        </div>
+      </div>
+      <div class="pane">
+        <div class="d-flex flex-wrap flex-md-column">
+          <div class="img-box img-sm mr-md-auto ml-md-auto">
+            <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/util.png" alt="ユーティリティアイコン">
+          </div>
+          <div class="flex-1 text-md-center">
+            <h5>テレフォニー・ユーティリティ</h5>
+            <p>
+              テレフォニーAPIをパワーアップできる、テキスト読み上げなどの便利なツール。
+            </p>
+            <a href="/ja/about/utilities-api/" class="link-point">もっと詳しく ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-mid">
+  <div class="container">
+    <div class="d-flex flex-wrap flex-sm-nowrap img-des-set">
+      <div class="img-box img-md">
+        <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/simple-api.png" alt="APIアイコン">
+      </div>
+      <div class="align-self-center flex-1-sm text-cl-sm">
+        <h3>簡潔なウェブAPI</h3>
+        <h4 class="margin-bt-sm">
+          HTTPで実装されている簡単なAPIで、自前のテレフォニー技術の面倒な部分を一切知識必要なくすぐに取り入れることが可能。
+        </h4>
+        <div class="btn-set btn-set-left">
+          
+          <a href="https://docs.xoxzo.com/ja/" class="btn btn-md btn-outline-point">
+          
+            API ドキュメント >
+          </a>
+          
+          <a href="https://hello.xoxzo.com/ja/" class="btn btn-md btn-outline-point">
+          
+            Xoxzoのデモ >
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="d-flex flex-wrap flex-sm-nowrap img-des-set">
+      <div class="img-box img-md order-sm-2">
+        <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/save-more.png" alt="料金アイコン">
+      </div>
+      <div class="align-self-center flex-1-sm order-sm-1 text-cl-sm">
+        <h3>より経済的に</h3>
+        <h4 class="margin-bt-sm">
+          利用したサービスを、ご利用分だけお支払ください。
+        </h4>
+        <a href="/ja/about/pricing/" class="btn btn-md btn-outline-point">
+          料金を知りたい >
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-mid">
+  <div class="container">
+    <div class="text-center">
+      <h3>ユーザー様の声</h3>
+      <h4 class="margin-bt-sm">
+        ユーザー様がどのようにサービスをご利用か<a href="https://blog.xoxzo.com/ja/use-cases/" class="link-underline">こちらより</a>ご参照ください。
+      </h4>
+    </div>
+    <div class="customer-imgs mr-auto ml-auto">
+      <div class="d-inline-block">
+        <a href="https://blog.xoxzo.com/ja/2017/02/03/io-architect-xoxzo-usecase/">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/customerlogos/ioarchitect.png" alt="アイオーアーキテクト">
+        </a>
+      </div>
+      <div class="d-inline-block">
+        <a href="https://blog.xoxzo.com/ja/2016/05/26/toda-corporation-xoxzo-usecase/">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/customerlogos/toda-corp.jpg" alt="⼾⽥建設">
+        </a>
+      </div>
+      <div class="d-inline-block">
+        <a href="https://blog.xoxzo.com/ja/2016/03/18/mic-xoxzo-usecase/">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/customerlogos/mic.png" alt="エムアイシー">
+        </a>
+      </div>
+      <div class="d-inline-block">
+        <a href="https://blog.xoxzo.com/ja/2017/08/15/3pro-interview/">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/customerlogos/3pro.png" alt="3Pro">
+        </a>
+      </div>
+      <div class="d-inline-block">
+        <a href="https://blog.xoxzo.com/ja/2017/10/03/cms-interview/">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/customerlogos/cmscom.png" alt="CMSコミュニケーションズ">
+        </a>
+      </div>
+      <div class="d-inline-block">
+        <a href="https://blog.xoxzo.com/ja/2018/01/22/secondlife-xoxzo-usecase/">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/customerlogos/secondlife-logo.png" alt="セカンドライフ">
+        </a>
+      </div>
+      <div class="d-inline-block">
+        <a href="https://blog.xoxzo.com/ja/2020/08/07/tsunagute-xoxzo-usecase/">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/customerlogos/tsunagute.png" alt="株式会社TSUNAGUTE">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <h3 class="text-center">
+      お知らせ
+    </h3>
+    <div class="text-center">
+      <div style="display: flex; justify-content: center;">
+<blockquote class="twitter-tweet" data-dnt="true">
+    <p 
+    lang="en" dir="ltr">Price deduction on Kpremium SMS sending
+    <a href="https://t.co/bIkd4UGl3P">https://t.co/bIkd4UGl3P</a>
+    </p>
+    &mdash; Xoxzo Inc. (@xoxzocom) 
+    <a href="https://twitter.com/xoxzocom/status/1895020691856261388?ref_src=twsrc%5Etfw">February 27, 2025</a>
+</blockquote> 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+    </div>
+  </div>
+</section>
+
+
+    </main>
+    
+
+
+
+
+
+<!-- FOOTER -->
+<footer class="mt-auto">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-3">
+        <div class="footer-menu">
+          <p>サービス</p>
+          <ul>
+            <li class="mb-1"><a href="/ja/about/sms-api/">SMS配信API</a></li>
+            <li class="mb-1"><a href="/ja/about/voice-api/">Voice（音声電話）API</a></li>
+            <li><a href="/ja/about/utilities-api/">テレフォニー・ユーティリティ</a></li>
+            <li class="mb-1"><a href="/ja/about/mail2sms-api/">Mail2SMS ユーザー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="footer-menu">
+          <p>サポート</p>
+          <ul>
+            
+            <li class="mb-1">
+              <a href="https://docs.xoxzo.com/ja/">API ドキュメント</a>
+            </li>
+            <li class="mb-1">
+              <a href="https://help.xoxzo.com/ja/">ヘルプセンター</a>
+            </li>
+            <li class="mb-1">
+              <a href="https://hello.xoxzo.com/ja/">Xoxzoのデモ</a>
+            </li>
+            
+            <li><a href="mailto:help@xoxzo.com">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="footer-menu">
+          <p>リーガル</p>
+          <ul>
+            <li class="mb-1"><a href="/ja/about/tos/">利用規約</a></li>
+            <li class="mb-1"><a href="/ja/about/privacy-policy/">プライバシー・ポリシー</a></li>
+            <li><a href="/ja/about/commercial-transaction-notice/">特定商取引法に基づく表記</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="footer-menu">
+          <p>運営会社</p>
+          <ul>
+            <li class="mb-1">
+              
+              <a href="https://info.xoxzo.com/ja/">会社について</a>
+              
+            </li>
+            <li class="mb-1"><a href="https://x.com/xoxzocom">X (旧ツイッター) </a></li>
+            <li class="mb-1">
+              
+              <a href="https://blog.xoxzo.com/ja/">ブログ</a>
+              
+            </li>
+            <li class="mb-1">
+              <a href="https://www.linkedin.com/company/xoxzo-inc-">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/lifeatxoxzo/">Instagram</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <h5>
+      &copy; 2025 Xoxzo Inc. All rights reserved.
+    </h5>
+  </div>
+</footer>
+
+    <script type="text/javascript">
+      function downloadJSAtOnload() {
+      var element1 = document.createElement("script");
+      var element4 = document.createElement("script");
+      var element5 = document.createElement("script");
+      element1.src = "/ja/jsi18n/";
+      element4.src = "https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/bootstrap/js/popper.min.js";
+      element5.src = "https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/bootstrap/js/bootstrap.min.js";
+
+      document.body.appendChild(element1);
+      document.body.appendChild(element4);
+      document.body.appendChild(element5);
+      }
+  
+      if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+      else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+      else window.onload = downloadJSAtOnload;
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Service",
+        "name": "Xoxzo Cloud Telephony",
+        "url": "https://www.xoxzo.com/",
+        "provider": {
+          "@type": "Organization",
+          "name": "Xoxzo Inc.",
+          "url": "https://info.xoxzo.com/",
+          "address": "150-0013, Shibuya-ku, Ebisu 4-23-8 Kohga Bldg 5F, Tokyo, Japan",
+          "sameAs": [
+            "https://x.com/xoxzocom/",
+            "https://www.instagram.com/lifeatxoxzo/",
+            "https://www.linkedin.com/company/xoxzo-inc-/",
+            "https://www.facebook.com/xoxzotelephony"
+          ]
+        }
+      }
+    </script>
+
+    
+  </body>
+</html>
