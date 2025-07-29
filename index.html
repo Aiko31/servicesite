@@ -78,7 +78,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link href="https://xoxzomedia-v2.s3.amazonaws.com/h3o/css/xoxzo.css" rel="stylesheet" type="text/css" />
     <link href="https://xoxzomedia-v2.s3.amazonaws.com/h3o/css/base.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
     <script src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/js/jquery.min.js"></script>
 
     
@@ -291,52 +291,60 @@
 <section class="bg-white">
   <div class="container">
     <h3 class="text-center">
-      XoxzoはWeb開発者の力になります
+      <ruby>
+        Xoxzo<rt>ゾクゾー</rt>
+      </ruby>はウェブ開発者の力になります
     </h3>
-    <h4 class="text-center margin-bt">
-      電話をかけたりSMSを制御したりといった面倒な作業を、インターネットでアクセスできるシンプルで直感的なWeb APIとして提供しています。
-    </h4>
     <div class="d-flex flex-wrap flex-md-nowrap pane-row">
       <div class="pane">
         <div class="d-flex flex-wrap flex-md-column">
+          <div class="flex-1 text-md-center">
+            <h5>SMS配信API</h5>
+          </div>
           <div class="img-box img-sm mr-md-auto ml-md-auto">
             <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/sms.png" alt="SMSアイコン">
           </div>
           <div class="flex-1 text-md-center">
-            <h5>SMS配信API</h5>
-            <p>
-              キャリアネットワーク経由でSMS（テキストメッセージ）を送信・受信。
-            </p>
             <a href="/ja/about/sms-api/" class="link-point">もっと詳しく ></a>
           </div>
+        </div>
+        <!-- サブコンテンツ（サービス詳細） -->
+        <div class="pane-subcontent">
+          <p>ここにSMS配信APIの詳細内容が表示されます。</p>
         </div>
       </div>
       <div class="pane">
         <div class="d-flex flex-wrap flex-md-column">
+          <div class="flex-1 text-md-center">
+            <h5>Voice（音声電話）API</h5>
+          </div>
           <div class="img-box img-sm mr-md-auto ml-md-auto">
             <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/voice.png" alt="Voiceアイコン">
           </div>
           <div class="flex-1 text-md-center">
-            <h5>Voice（音声電話）API</h5>
-            <p>
-              Web経由で電話をかけたり、着信をWebで受けて、お好みのアクションで制御。
-            </p>
             <a href="/ja/about/voice-api/" class="link-point">もっと詳しく ></a>
           </div>
+        </div>
+        <!-- サブコンテンツ（サービス詳細） -->
+        <div class="pane-subcontent">
+          <p>ここにSMS配信APIの詳細内容が表示されます。</p>
         </div>
       </div>
       <div class="pane">
         <div class="d-flex flex-wrap flex-md-column">
+          <div class="flex-1 text-md-center">
+            <h5>テレフォニー・ユーティリティ</h5>
+          </div>
           <div class="img-box img-sm mr-md-auto ml-md-auto">
             <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/util.png" alt="ユーティリティアイコン">
           </div>
           <div class="flex-1 text-md-center">
-            <h5>テレフォニー・ユーティリティ</h5>
-            <p>
-              テレフォニーAPIをパワーアップできる、テキスト読み上げなどの便利なツール。
-            </p>
             <a href="/ja/about/utilities-api/" class="link-point">もっと詳しく ></a>
           </div>
+        </div>
+        <!-- サブコンテンツ（サービス詳細） -->
+        <div class="pane-subcontent">
+          <p>ここにSMS配信APIの詳細内容が表示されます。</p>
         </div>
       </div>
     </div>
@@ -584,12 +592,25 @@
         }
       }
     </script>
-<script>
-  // 自動スライドの設定
-  $('.carousel').carousel({
-    interval: 4000  // 2000ミリ秒（2秒）ごとにスライドが切り替わる
-  });
-</script>
-    
+    <script>
+      // 自動スライドの設定
+      $('.carousel').carousel({
+        interval: 4000  // 2000ミリ秒（2秒）ごとにスライドが切り替わる
+      });
+    </script>
+        document.querySelectorAll('.pane').forEach(function(pane) {
+      pane.addEventListener('click', function() {
+        // 他のpaneのサブコンテンツを非表示にする
+        document.querySelectorAll('.pane').forEach(function(otherPane) {
+          otherPane.classList.remove('active');
+          otherPane.querySelector('.pane-subcontent').style.display = 'none';
+        });
+        
+        // クリックしたpaneをアクティブにする
+        this.classList.add('active');
+        this.querySelector('.pane-subcontent').style.display = 'block'; // サブコンテンツを表示
+      });
+    });
+    </script>
   </body>
 </html>
