@@ -67,6 +67,7 @@
 " />
 
     <link rel="icon" href="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/xoxzo_16x16_favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Jost:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
@@ -275,19 +276,53 @@
   </a>
 </div>
 
-
-<section class="bg-white">
-  <div class="container">
-    <h3 class="text-center">
+<div class="container top-page-titale-set">
+    <h3 class="text-center top-page-title">
       <ruby>
         Xoxzo<rt>ゾクゾー</rt>
-      </ruby>はウェブ開発者の力になります
+      </ruby>のAPI = ウェブ開発者の力
     </h3>
+</div>
+
+<!--ちょっとお試し-->
+<section class="bg-mid">
+  <div class="container">
+    <div class="d-flex flex-wrap flex-sm-nowrap img-des-set">
+      <div class="img-box img-md">
+        <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/sms.png" alt="APIアイコン">
+      </div>
+     <div class="align-self-center flex-1-sm text-cl-sm">
+        <h3>APIの種類</h3>
+        <h4 class="margin-bt-sm">
+          SMSも、音声通話も、テレフォニーAPIがウェブ開発者の力になります。
+        </h4>
+        <div class="btn-set btn-set-left">
+          <a href="https://docs.xoxzo.com/ja/" class="btn btn-md btn-outline-point" data-id="1">
+            SMS
+          </a>
+          <a href="https://docs.xoxzo.com/ja/" class="btn btn-md btn-outline-point">
+            Voice
+          </a>
+          <a href="https://docs.xoxzo.com/ja/" class="btn btn-md btn-outline-point">
+            ユーティリティ
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="bg-white">
+  <div class="container service">
+    <h3>APIの種類</h3>
     <div class="d-flex flex-wrap flex-md-nowrap pane-row">
       <div class="pane" data-id="1">
         <div class="d-flex flex-wrap flex-md-column">
           <div class="flex-1 text-md-center">
-            <h5>SMS配信API</h5>
+            <p class="pane-title">SMS</p>
           </div>
           <div class="img-box img-sm mr-md-auto ml-md-auto">
             <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/sms.png" alt="SMSアイコン">
@@ -300,7 +335,7 @@
       <div class="pane" data-id="2">
         <div class="d-flex flex-wrap flex-md-column">
           <div class="flex-1 text-md-center">
-            <h5>Voice（音声電話）API</h5>
+            <p class="pane-title">Voice</p>
           </div>
           <div class="img-box img-sm mr-md-auto ml-md-auto">
             <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/voice.png" alt="Voiceアイコン">
@@ -313,7 +348,7 @@
       <div class="pane" data-id="3">
         <div class="d-flex flex-wrap flex-md-column">
           <div class="flex-1 text-md-center">
-            <h5>ユーティリティ</h5>
+            <p class="pane-title">ユーティリティ</p>
           </div>
           <div class="img-box img-sm mr-md-auto ml-md-auto">
             <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/util.png" alt="ユーティリティアイコン">
@@ -324,17 +359,75 @@
         </div>
       </div>
     </div>
-              <!-- サブコンテンツ（サービス詳細） -->
-        <div class="pane-subcontent" data-id="1">
-          <p>サブコンテンツ(1)<br>ここにSMS配信APIの詳細内容が表示されます。</p>
-        </div>
+          <!-- サブコンテンツ（サービス詳細） -->
+          <div class="pane-subcontent" data-id="1">
+
+            <!-- 1. 通常送信/オプションで直収接続のJPKP とJPKPL -->
+            <div class="service-card">
+              <h4 class="card-title">1. 通常送信</h4>
+              <p>2007年から続くSMS業界のパイオニアが提供する、高品質のSMS送信です。<br>オプションとして直収接続(Kプレミアム)やリンクトラッキングを利用可能。</p>
+            </div>
+
+            <!-- 2. Mail2SMS -->
+            <div class="service-card">
+              <h4 class="card-title">2. Mail2SMS</h4>
+              <p>Mail2SMSは、メールクライアントから直接SMSを送信できるAPIです。<br>マルチチャンネルの顧客センターの構築にも便利です。</p>
+            </div>
+
+            <!-- 3. OTP API -->
+            <div class="service-card">
+              <h4 class="card-title">3. OTP API（新規リリース）</h4>
+              <p>OTP APIは、送信本文をOTPに制限したSMS送信を提供します。<br>安全で認証された送信を特別価格でご提供。</p>
+            </div>
+
+            <!-- 4. SMS送信状態チェック -->
+            <div class="service-card">
+              <h4 class="card-title">4. SMSステータス確認API</h4>
+              <p>送信したSMSの状態を調査できるAPIです。<br>送信結果やリアルタイムの配信ステータスを確認できます。</p>
+            </div>
+          </div>
+
         <div class="pane-subcontent" data-id="2">
-          <p>サブコンテンツ(2)<br>ここにVoice（音声電話）APIの詳細内容が表示されます。</p>
-        </div>
-        <div class="pane-subcontent" data-id="3">
-          <p>サブコンテンツ(3)<br>ここにテレフォニー・ユーティリティの詳細内容が表示されます。</p>
+          <!-- 1. 電話発信API -->
+          <div class="service-card">
+            <h4 class="card-title">1. 電話発信API</h4>
+            <p>APIの呼び出しだけで電話発信を行い、準備しておいた音声ファイルを再生、もしくはテキストの読み上げを行います。</p>
+          </div>
+
+          <!-- 2. 電話着信API -->
+          <div class="service-card">
+            <h4 class="card-title">2. 電話着信API</h4>
+            <p>着信用番号（DIN）への着信があると、指定通りにGETリクエストを投げます。<br>利用可能なアクションは、音声ファイルの再生、テキストの読み上げ、別番号への転送、留守電での対応です。</p>
+          </div>
+
+          <!-- 3. 音声発信・着信ステータス確認API -->
+          <div class="service-card">
+            <h4 class="card-title">3. ステータス確認API</h4>
+            <p>音声発信と音声着信に関して、送信状態や通話のステータスを確認できるAPIです。<br>リアルタイムで配信状況を把握できます。</p>
+          </div>
         </div>
 
+        <div class="pane-subcontent" data-id="3">
+          <!-- 1. 携帯電話事業者確認API -->
+          <div class="service-card">
+            <h4 class="card-title">1. 携帯電話事業者確認API</h4>
+            <p>携帯電話番号の事業者情報を確認するAPIです。<br>ナンバー・ポータビリティ情報も反映されます。</p>
+          </div>
+
+          <!-- 2. テキスト読み上げ機能（TTS） -->
+          <div class="service-card">
+            <h4 class="card-title">2. テキスト読み上げ機能（TTS）</h4>
+            <p>APIを通じて、指定のテキストを音声に変換して再生することができます。<br>日本語と英語に対応しています。</p>
+          </div>
+
+          <!-- 3. アカウントAPI -->
+          <div class="service-card">
+            <h4 class="card-title">3. アカウントAPI</h4>
+            <p>アカウントのクレジット残高を取得できるAPIです。<br>アカウントに紐づくクレジット情報をリアルタイムで取得可能です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

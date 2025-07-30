@@ -3,6 +3,7 @@
 main {
   width: 1000px; /* 既存の制限 */
   margin: 0 auto;
+  font-family: Noto Sans JP, sans-serif; /* Noto Sans JPフォントを適用 */
 }
 
 .navbar {
@@ -25,10 +26,37 @@ main {
   object-fit: contain; 
 }
 
+.service {
+  margin-bottom: 0px; /* 下部の余白を削除 */
+}
+
+
+
+.top-page-title-set {
+  text-align: center; /* タイトルを中央揃え */
+  margin-top: 100px; /* ページ上部からの余白を追加 */
+  margin-bottom: 0px; /* タイトルとコンテンツの間に余白を追加 */
+}
+
+.top-page-title {
+  font-family: 'Noto Sans JP', sans-serif; /* Noto Sans JPフォントを適用 */
+  font-size: 30px; /* フォントサイズを調整 */
+  color: #2873AF; /* タイトルの色を変更 */
+  margin-top: 50px; /* ページ上部からの余白を追加 */
+  margin-bottom: 20px; /* タイトルとコンテンツの間に余白を追加 */
+}
+
 .pane .pane-row{
   margin-bottom: 0; /* 下の余白を削除 */
-  height: 200px; /* 高さを自動調整 */;
 }
+
+.pane-title {
+  font-family: 'Noto Sans JP', sans-serif; /* Noto Sans JPフォントを適用 */
+  font-size: 30px; /* フォントサイズを調整 */
+  color: #2873AF; /* タイトルの色を変更 */
+  margin-bottom: 10px; /* タイトルとコンテンツの間に余白を追加 */
+}
+
 .pane.active {
   background-color: #f0f0f0; /* アクティブなpaneの背景色 */
   border: 2px solid #2873AF; /* アクティブなpaneのボーダー */
@@ -40,16 +68,46 @@ main {
   padding: 10px;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
+  border-radius: 8px;
   box-sizing: border-box; /* パディングとボーダーを含めたサイズ計算 */
   margin-top: -50px;
   margin-bottom: 0;
   height: 0;
   overflow: hidden;
-  transition: height 0.3s ease; /* 高さの変化にアニメーションを追加 */
+  transition: height 1.5s ease; /* 高さの変化にアニメーションを追加 */
 }
-.pane:hover .pane-subcontent {
+.pane:hover .btn .pane-subcontent {
   display: block; /* paneがホバリングされた時に表示 */
   height: auto;
 }
 
 
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h4 {
+  color: #2873AF;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #333;
+}
+
+.service-card:last-child {
+  margin-bottom: 0;
+}
+
+.card-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 30px;
+  color: #2873AF;
+  margin-bottom: 10px;
+}
