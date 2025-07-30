@@ -78,7 +78,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link href="https://xoxzomedia-v2.s3.amazonaws.com/h3o/css/xoxzo.css" rel="stylesheet" type="text/css" />
     <link href="https://xoxzomedia-v2.s3.amazonaws.com/h3o/css/base.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/js/jquery.min.js"></script>
 
     
@@ -247,18 +247,6 @@
       
 <div class="container">
 </div>
-<!--
-<header class="index bg-mid">
-    
-    <div class="container">
-    <h1>ウェブ開発者のためのテレフォニーウェブAPI</h1>
-    <h2>
-      SMS配信、携帯電話番号認証、電話の受信・発信がすべてこのAPIで実現できます。
-    </h2>
-    <a href="/ja/accounts/signup/" class="btn btn-lg btn-point">はじめよう</a>
-  </div>
-</header>
--->
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -296,7 +284,7 @@
       </ruby>はウェブ開発者の力になります
     </h3>
     <div class="d-flex flex-wrap flex-md-nowrap pane-row">
-      <div class="pane">
+      <div class="pane" data-id="1">
         <div class="d-flex flex-wrap flex-md-column">
           <div class="flex-1 text-md-center">
             <h5>SMS配信API</h5>
@@ -308,12 +296,8 @@
             <a href="/ja/about/sms-api/" class="link-point">もっと詳しく ></a>
           </div>
         </div>
-        <!-- サブコンテンツ（サービス詳細） -->
-        <div class="pane-subcontent">
-          <p>ここにSMS配信APIの詳細内容が表示されます。</p>
-        </div>
       </div>
-      <div class="pane">
+      <div class="pane" data-id="2">
         <div class="d-flex flex-wrap flex-md-column">
           <div class="flex-1 text-md-center">
             <h5>Voice（音声電話）API</h5>
@@ -325,15 +309,11 @@
             <a href="/ja/about/voice-api/" class="link-point">もっと詳しく ></a>
           </div>
         </div>
-        <!-- サブコンテンツ（サービス詳細） -->
-        <div class="pane-subcontent">
-          <p>ここにSMS配信APIの詳細内容が表示されます。</p>
-        </div>
       </div>
-      <div class="pane">
+      <div class="pane" data-id="3">
         <div class="d-flex flex-wrap flex-md-column">
           <div class="flex-1 text-md-center">
-            <h5>テレフォニー・ユーティリティ</h5>
+            <h5>ユーティリティ</h5>
           </div>
           <div class="img-box img-sm mr-md-auto ml-md-auto">
             <img src="https://s3-ap-northeast-1.amazonaws.com/xoxzomedia-v2/h3o/images/util.png" alt="ユーティリティアイコン">
@@ -342,12 +322,19 @@
             <a href="/ja/about/utilities-api/" class="link-point">もっと詳しく ></a>
           </div>
         </div>
-        <!-- サブコンテンツ（サービス詳細） -->
-        <div class="pane-subcontent">
-          <p>ここにSMS配信APIの詳細内容が表示されます。</p>
-        </div>
       </div>
     </div>
+              <!-- サブコンテンツ（サービス詳細） -->
+        <div class="pane-subcontent" data-id="1">
+          <p>サブコンテンツ(1)<br>ここにSMS配信APIの詳細内容が表示されます。</p>
+        </div>
+        <div class="pane-subcontent" data-id="2">
+          <p>サブコンテンツ(2)<br>ここにVoice（音声電話）APIの詳細内容が表示されます。</p>
+        </div>
+        <div class="pane-subcontent" data-id="3">
+          <p>サブコンテンツ(3)<br>ここにテレフォニー・ユーティリティの詳細内容が表示されます。</p>
+        </div>
+
   </div>
 </section>
 
@@ -485,7 +472,7 @@
           <ul>
             <li class="mb-1"><a href="/ja/about/sms-api/">SMS配信API</a></li>
             <li class="mb-1"><a href="/ja/about/voice-api/">Voice（音声電話）API</a></li>
-            <li><a href="/ja/about/utilities-api/">テレフォニー・ユーティリティ</a></li>
+            <li><a href="/ja/about/utilities-api/">ユーティリティ</a></li>
             <li class="mb-1"><a href="/ja/about/mail2sms-api/">Mail2SMS ユーザー</a></li>
           </ul>
         </div>
@@ -598,19 +585,52 @@
         interval: 4000  // 2000ミリ秒（2秒）ごとにスライドが切り替わる
       });
     </script>
+    <script>
         document.querySelectorAll('.pane').forEach(function(pane) {
       pane.addEventListener('click', function() {
         // 他のpaneのサブコンテンツを非表示にする
-        document.querySelectorAll('.pane').forEach(function(otherPane) {
-          otherPane.classList.remove('active');
-          otherPane.querySelector('.pane-subcontent').style.display = 'none';
+        document.querySelectorAll('.pane-subcontent').forEach(function(subcontent) {
+          subcontent.style.display = 'none';
+          subcontent.style.height = '0';    // 高さを0に設定
         });
+
+        // クリックしたpaneのdata-idを取得
+        var id = pane.getAttribute('data-id');
         
-        // クリックしたpaneをアクティブにする
-        this.classList.add('active');
-        this.querySelector('.pane-subcontent').style.display = 'block'; // サブコンテンツを表示
+        // 対応するサブコンテンツを表示
+        var activeSubcontent = document.querySelector('.pane-subcontent[data-id="' + id + '"]');
+        if (activeSubcontent) {
+          activeSubcontent.style.display = 'block';  // 対応するサブコンテンツを表示
+          activeSubcontent.style.height = 'auto';    // 高さを自動調整
+        }
       });
     });
+    </script>
+    <script>
+          document.querySelectorAll('.pane').forEach(function(pane) {
+          pane.addEventListener('mouseenter', function() {
+            var id = this.getAttribute('data-id');  // ホバーしたpaneのdata-idを取得
+
+            // 対応するサブコンテンツを表示
+            var activeSubcontent = document.querySelector('.pane-subcontent[data-id="' + id + '"]');
+            if (activeSubcontent) {
+              activeSubcontent.style.display = 'block';  // 対応するサブコンテンツを表示
+              activeSubcontent.style.height = 'auto';  // 高さを自動調整
+            }
+          });
+
+          pane.addEventListener('mouseleave', function() {
+            var id = this.getAttribute('data-id');  // ホバーを離したpaneのdata-idを取得
+
+            // 対応するサブコンテンツを非表示
+            var activeSubcontent = document.querySelector('.pane-subcontent[data-id="' + id + '"]');
+            if (activeSubcontent) {
+              activeSubcontent.style.display = 'none';  // 対応するサブコンテンツを非表示
+              activeSubcontent.style.height = '0';  // 高さを0に設定
+            }
+          });
+        });
+
     </script>
   </body>
 </html>

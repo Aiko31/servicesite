@@ -25,6 +25,10 @@ main {
   object-fit: contain; 
 }
 
+.pane .pane-row{
+  margin-bottom: 0; /* 下の余白を削除 */
+  height: 200px; /* 高さを自動調整 */;
+}
 .pane.active {
   background-color: #f0f0f0; /* アクティブなpaneの背景色 */
   border: 2px solid #2873AF; /* アクティブなpaneのボーダー */
@@ -37,9 +41,15 @@ main {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   box-sizing: border-box; /* パディングとボーダーを含めたサイズ計算 */
+  margin-top: -50px;
+  margin-bottom: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease; /* 高さの変化にアニメーションを追加 */
 }
 .pane:hover .pane-subcontent {
   display: block; /* paneがホバリングされた時に表示 */
+  height: auto;
 }
 
 
