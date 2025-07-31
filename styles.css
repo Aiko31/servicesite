@@ -13,6 +13,7 @@ main {
 
 #carouselExampleIndicators {
   height: 600px; /* 高さを600pxに設定 */
+  margin-bottom: 20px; /* 下部の余白を追加 */
 }
 
 #carouselExampleIndicators .carousel-inner {
@@ -70,7 +71,7 @@ main {
   border: 1px solid #ccc;
   border-radius: 8px;
   box-sizing: border-box; /* パディングとボーダーを含めたサイズ計算 */
-  margin-top: -50px;
+  margin-top: 0px;
   margin-bottom: 0;
   height: 0;
   overflow: hidden;
@@ -110,4 +111,14 @@ main {
   font-size: 30px;
   color: #2873AF;
   margin-bottom: 10px;
+}
+
+
+.hover-text-change:hover {
+  /* 「詳細はクリック」など、ボタンテキストの変更 */
+  content: "詳細はクリック"; /* このプロパティではテキスト変更はできない */
+}
+
+.btn:hover .hover-text-change {
+  content: 'やってみる'; /* この方法ではテキスト変更は直接はできません */
 }
