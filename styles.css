@@ -122,3 +122,20 @@ main {
 .btn:hover .hover-text-change {
   content: 'やってみる'; /* この方法ではテキスト変更は直接はできません */
 }
+
+
+
+/* スマホ（画面幅480px以上） */
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
+  }
+
+  .btn {
+    font-size: 1em; /* ボタンのフォントサイズをさらに小さく */
+  }
+
+  .img-box img {
+    width: 100%; /* 画像を全幅に */
+  }
+}
