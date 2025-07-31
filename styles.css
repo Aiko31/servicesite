@@ -124,6 +124,22 @@ main {
 }
 
 
+/* 通常のデスクトップサイズ用 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* タブレット（画面幅768px以上） */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%; /* 幅を少し小さく */
+  }
+
+  .btn {
+    font-size: 1.2em; /* ボタンのフォントサイズを調整 */
+  }
+}
 
 /* スマホ（画面幅480px以上） */
 @media (max-width: 480px) {
