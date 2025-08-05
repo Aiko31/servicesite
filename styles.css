@@ -114,14 +114,16 @@ main {
 }
 
 
-.hover-text-change:hover {
-  /* 「詳細はクリック」など、ボタンテキストの変更 */
-  content: "詳細はクリック"; /* このプロパティではテキスト変更はできない */
+/* ボタンにスペースを設定 */
+.btn-pricing {
+  margin-right: 15px; /* ボタン同士の間に15pxのスペースを設定 */
 }
 
-.btn:hover .hover-text-change {
-  content: 'やってみる'; /* この方法ではテキスト変更は直接はできません */
+/* 最後のボタンには右側のマージンを適用しない */
+.btn-pricing:last-child {
+  margin-right: 0;
 }
+
 
 
 /* 通常のデスクトップサイズ用 */
